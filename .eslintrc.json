@@ -13,14 +13,6 @@
                 "extensions": [ ".js", ".jsx" ] 
             }
         ],
-        "prettier/prettier": [
-            "error",
-            {
-              "trailingComma": "es5",
-              "singleQuote": true,
-              "printWidth": 100
-            }
-        ],
         "import/no-named-as-default": 0
     },
     "plugins": [
