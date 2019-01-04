@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
 });
 
 const SearchList = (props) => {
-  const { searchItems } = props;
+  const { searchItems, navigation } = props;
 
   return (
     <FlatList
@@ -20,6 +20,7 @@ const SearchList = (props) => {
       renderItem={({ item }) => (
         <SearchListItem
           name={item.name}
+          navigation={navigation}
         />
       )}
       keyExtractor={item => item.id.toString()}

@@ -11,6 +11,13 @@ const styles = StyleSheet.create({
 });
 
 export default class Search extends Component {
+  static navigationOptions = {
+    title: 'Search',
+    headerStyle: {
+      backgroundColor: '#26B99A',
+    },
+  }
+
   state = {
     searchItems: [
       {
@@ -54,9 +61,13 @@ export default class Search extends Component {
 
   render() {
     const { searchItems } = this.state;
+    const { navigation } = this.props;
     return (
       <View style={styles.sectionContainer}>
-        <SearchList searchItems={searchItems} />
+        <SearchList
+          searchItems={searchItems}
+          navigation={navigation}
+        />
       </View>
     );
   }

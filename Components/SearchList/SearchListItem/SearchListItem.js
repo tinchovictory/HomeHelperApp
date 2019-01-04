@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  View, Text, Image, StyleSheet,
+  View, Text, Image, StyleSheet, TouchableOpacity,
 } from 'react-native';
 import PropTypes from 'prop-types';
 
@@ -24,10 +24,13 @@ const styles = StyleSheet.create({
 });
 
 const SearchListItem = (props) => {
-  const { name } = props;
+  const { name, navigation } = props;
 
   return (
-    <View style={styles.itemContainer}>
+    <TouchableOpacity
+      style={styles.itemContainer}
+      onPress={() => navigation.navigate('ProfileScreen')}
+    >
       <Image
         style={styles.profilePicture}
         source={{ uri: 'http://pawserver.it.itba.edu.ar/paw-2018a-4/api/users/15/image' }}
@@ -35,7 +38,7 @@ const SearchListItem = (props) => {
       <View style={styles.rowDescription}>
         <Text>{name}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
