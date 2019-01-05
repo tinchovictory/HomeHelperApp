@@ -29,6 +29,12 @@ export default class Description extends Component {
     }
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps !== this.props) {
+      this.hideFullText();
+    }
+  }
+
   handleShowMorePress = () => {
     this.showFullText();
   }
@@ -36,6 +42,12 @@ export default class Description extends Component {
   showFullText = () => {
     this.setState({
       showingFullText: true,
+    });
+  }
+
+  hideFullText = () => {
+    this.setState({
+      showingFullText: false,
     });
   }
 
