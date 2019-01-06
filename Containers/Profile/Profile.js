@@ -1,16 +1,41 @@
 import React, { Component } from 'react';
 import {
-  ScrollView, StyleSheet,
+  View, ScrollView, StyleSheet, TouchableOpacity, Text,
 } from 'react-native';
 
 import Description from '../../Components/Description/Description';
 import SectionDivider from '../../Components/SectionDivider/SectionDivider';
 import ServicesSection from '../../Components/ServicesSection/ServicesSection';
+import ReviewsSection from '../../Components/ReviewsSection/ReviewsSection';
 
 const styles = StyleSheet.create({
   profileContainer: {
     flex: 1,
+  },
+  scrollViewContainer: {
+    flex: 1,
     backgroundColor: '#F7F7F7',
+  },
+  contactBtnContainer: {
+    marginBottom: 20,
+    width: '100%',
+    alignItems: 'center',
+    padding: 10,
+    borderTopWidth: 1,
+    borderColor: '#ccc',
+  },
+  contactBtn: {
+    width: '90%',
+    padding: 10,
+    backgroundColor: '#26B99A',
+    borderRadius: 5,
+    alignItems: 'center',
+  },
+  contactBtnText: {
+    color: '#fff',
+    fontWeight: 'bold',
+  },
+  scrollViewContent: {
     padding: 20,
   },
 });
@@ -42,15 +67,25 @@ export default class Profile extends Component {
     ];
 
     return (
-      <ScrollView style={styles.profileContainer}>
-        <Description
-          text={loremIpsum}
-          initialLength={300}
-        />
-        <SectionDivider />
-        <ServicesSection servicesList={servicesList} />
-        <SectionDivider />
-      </ScrollView>
+      <View style={styles.profileContainer}>
+        <ScrollView style={styles.scrollViewContainer}>
+          <View style={styles.scrollViewContent}>
+            <Description
+              text={loremIpsum}
+              initialLength={300}
+            />
+            <SectionDivider />
+            <ServicesSection servicesList={servicesList} />
+            <SectionDivider />
+            <ReviewsSection />
+          </View>
+        </ScrollView>
+        <View style={styles.contactBtnContainer}>
+          <TouchableOpacity style={styles.contactBtn}>
+            <Text style={styles.contactBtnText}>Contactar</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     );
   }
 }

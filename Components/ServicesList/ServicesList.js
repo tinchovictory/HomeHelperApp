@@ -25,6 +25,7 @@ const ServicesList = ({ servicesList, active, onPressItem }) => (
     horizontal
     keyExtractor={item => item.id.toString()}
     extraData={active}
+    showsHorizontalScrollIndicator={false}
   />
 );
 
