@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 10,
     borderTopWidth: 1,
-    borderColor: '#ccc',
+    borderColor: '#E1E1E1',
   },
   contactBtn: {
     width: '90%',
@@ -51,6 +51,8 @@ export default class Profile extends Component {
   state = {};
 
   render() {
+    const { navigation } = this.props;
+
     const loremIpsum = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed scelerisque lectus. Aenean mollis arcu auctor lectus venenatis, sit amet semper lorem sollicitudin. In volutpat lorem eget ligula lacinia pulvinar. Integer sem libero, blandit sed massa sit amet, mattis euismod ligula. Donec quis tellus sem. Morbi maximus pulvinar ultrices. Maecenas vitae ultricies nunc, a rhoncus est. Vestibulum efficitur velit risus, id pharetra justo dapibus et. Nullam ut est in magna eleifend luctus sed ac lorem. Pellentesque eleifend tellus vel turpis egestas fermentum. Vivamus mattis sollicitudin tortor ut facilisis. In tincidunt, sem sed lacinia dignissim, nisi ex semper dui, semper euismod tellus lacus eget tellus. Pellentesque elementum, neque vehicula euismod commodo, nisl lorem ultricies eros, et tempus dolor urna nec ligula. Fusce ultricies neque et nisi consectetur volutpat eu sit amet ex. Sed pulvinar lorem sit amet tincidunt cursus. Nulla id faucibus erat.';
 
     const servicesList = [
@@ -77,11 +79,14 @@ export default class Profile extends Component {
             <SectionDivider />
             <ServicesSection servicesList={servicesList} />
             <SectionDivider />
-            <ReviewsSection />
+            <ReviewsSection navigation={navigation} />
           </View>
         </ScrollView>
         <View style={styles.contactBtnContainer}>
-          <TouchableOpacity style={styles.contactBtn}>
+          <TouchableOpacity
+            style={styles.contactBtn}
+            onPress={() => { navigation.navigate('ContactForm'); }}
+          >
             <Text style={styles.contactBtnText}>Contactar</Text>
           </TouchableOpacity>
         </View>
