@@ -4,6 +4,7 @@ import {
 } from 'react-native';
 
 import Description from '../Description/Description';
+import ScoreStars from '../ScoreStars/ScoreStars';
 
 const styles = StyleSheet.create({
   reviewHeader: {
@@ -15,10 +16,19 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 30,
   },
+  rightHeaderContainer: {
+    flexDirection: 'row',
+    flex: 1,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
   nameContainer: {
     marginLeft: 15,
     flex: 1,
     justifyContent: 'center',
+  },
+  scoreContainer: {
+    marginRight: 10,
   },
   name: {
     fontWeight: '600',
@@ -56,9 +66,14 @@ export default class ReviewSection extends Component {
             style={styles.profilePicture}
             source={{ uri: 'http://pawserver.it.itba.edu.ar/paw-2018a-4/api/users/15/image' }}
           />
-          <View style={styles.nameContainer}>
-            <Text style={styles.name}>Martin</Text>
-            <Text style={styles.date}>Enero 2019</Text>
+          <View style={styles.rightHeaderContainer}>
+            <View style={styles.nameContainer}>
+              <Text style={styles.name}>Martin</Text>
+              <Text style={styles.date}>Enero 2019</Text>
+            </View>
+            <View style={styles.scoreContainer}>
+              <ScoreStars score={3.5} />
+            </View>
           </View>
         </View>
         <Description
