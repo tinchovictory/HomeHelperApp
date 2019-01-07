@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, StyleSheet } from 'react-native';
+
+const styles = StyleSheet.create({
+  contactContainer: {
+    paddingTop: 60,
+    backgroundColor: '#fff',
+    flex: 1,
+  },
+});
 
 export default class ContactForm extends Component {
   state={};
@@ -8,8 +16,8 @@ export default class ContactForm extends Component {
     const { navigation } = this.props;
 
     return (
-      <View style={{ marginTop: 60 }}>
-        <Text>Contatar</Text>
+      <View style={styles.contactContainer}>
+        <Text>Contactar</Text>
         <Button
           title="Close"
           onPress={() => { navigation.goBack(); }}

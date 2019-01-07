@@ -4,6 +4,7 @@ import {
 } from 'react-native';
 import { Constants } from 'expo';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import PropTypes from 'prop-types';
 
 import ScoreStars from '../ScoreStars/ScoreStars';
 import bgImg from '../../assets/ProfileBg.png';
@@ -90,7 +91,9 @@ const styles = StyleSheet.create({
   },
 });
 
-const ProfileHeaderBar = ({ height, scrollY, name, serviceTypes, score, img, handleGoBack }) => {
+const ProfileHeaderBar = ({
+  height, scrollY, name, serviceTypes, score, img, handleGoBack,
+}) => {
   const imageOpacity = scrollY.interpolate({
     inputRange: [0, HEADER_SCROLL_DISTANCE / 2, HEADER_SCROLL_DISTANCE],
     outputRange: [1, 1, 0],
@@ -141,6 +144,16 @@ const ProfileHeaderBar = ({ height, scrollY, name, serviceTypes, score, img, han
       </Animated.View>
     </Animated.View>
   );
+};
+
+ProfileHeaderBar.propTypes = {
+  height: PropTypes.shape().isRequired,
+  scrollY: PropTypes.shape().isRequired,
+  name: PropTypes.string.isRequired,
+  serviceTypes: PropTypes.arrayOf(PropTypes.string).isRequired,
+  score: PropTypes.number.isRequired,
+  img: PropTypes.string.isRequired,
+  handleGoBack: PropTypes.func.isRequired,
 };
 
 export default ProfileHeaderBar;
