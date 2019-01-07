@@ -23,38 +23,56 @@ export default class Search extends Component {
       {
         id: 1,
         name: 'Martin Victory',
+        serviceTypes: ['Carpintero', 'Pintor'],
+        score: 4,
       },
       {
         id: 2,
         name: 'Martin Victory 2',
+        serviceTypes: ['Carpintero', 'Pintor'],
+        score: 4,
       },
       {
         id: 3,
         name: 'Martin Victory 3',
+        serviceTypes: ['Carpintero', 'Pintor'],
+        score: 4,
       },
       {
         id: 4,
         name: 'Martin Victory 4',
+        serviceTypes: ['Carpintero', 'Pintor'],
+        score: 4,
       },
       {
         id: 5,
         name: 'Martin Victory 5',
+        serviceTypes: ['Carpintero', 'Pintor'],
+        score: 4,
       },
       {
         id: 6,
         name: 'Martin Victory 6',
+        serviceTypes: ['Carpintero', 'Pintor'],
+        score: 4,
       },
       {
         id: 7,
         name: 'Martin Victory 7',
+        serviceTypes: ['Carpintero', 'Pintor'],
+        score: 4,
       },
       {
         id: 8,
         name: 'Martin Victory 8',
+        serviceTypes: ['Carpintero', 'Pintor'],
+        score: 4,
       },
       {
         id: 9,
         name: 'Martin Victory 9',
+        serviceTypes: ['Carpintero', 'Pintor'],
+        score: 4,
       },
     ],
   };

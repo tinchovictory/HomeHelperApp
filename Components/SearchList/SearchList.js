@@ -21,6 +21,8 @@ const SearchList = (props) => {
         <SearchListItem
           name={item.name}
           navigation={navigation}
+          serviceTypes={item.serviceTypes}
+          score={item.score}
         />
       )}
       keyExtractor={item => item.id.toString()}
