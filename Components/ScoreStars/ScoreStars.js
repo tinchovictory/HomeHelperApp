@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const ScoreStars = ({ score }) => {
+const ScoreStars = ({ score, color = '#444', size = 12 }) => {
   const rating = [];
   let stars = parseInt(score, 10);
 
@@ -28,12 +28,12 @@ const ScoreStars = ({ score }) => {
 
   for (let i = 0; i < 5; i += 1) {
     if (i < stars) {
-      rating.push(<Icon name="star" color="#444" key={i} />);
+      rating.push(<Icon name="star" color={color} key={i} size={size} />);
     } else if (half && !pushedHalfStar) {
-      rating.push(<Icon name="star-half-o" color="#444" key={i} />);
+      rating.push(<Icon name="star-half-o" color={color} key={i} size={size} />);
       pushedHalfStar = true;
     } else {
-      rating.push(<Icon name="star-o" color="#444" key={i} />);
+      rating.push(<Icon name="star-o" color={color} key={i} size={size} />);
     }
   }
 
@@ -46,6 +46,8 @@ const ScoreStars = ({ score }) => {
 
 ScoreStars.propTypes = {
   score: PropTypes.number.isRequired,
+  color: PropTypes.string,
+  size: PropTypes.number,
 };
 
 export default ScoreStars;

@@ -10,6 +10,9 @@ const SearchStackNavigator = createStackNavigator({
   ProfileScreen: {
     screen: Profile,
   },
+},
+{
+  headerMode: 'screen',
 });
 
 SearchStackNavigator.navigationOptions = ({ navigation }) => {
