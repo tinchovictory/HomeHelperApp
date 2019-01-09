@@ -4,15 +4,15 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import SearchStackNavigator from '../SearchStackNavigatior/SearchStackNavigator';
 import AppointmentsStackNavigator from '../AppointmentsStackNavigator/AppointmensStackNavigator';
+import MessagesStackNavigator from '../MessagesStackNavigator/MessagesStackNavigaror';
 
-import Messages from '../../Containers/Messages/Messages';
 import Settings from '../../Containers/Settings/Settings';
 
 const TabNavigator = createBottomTabNavigator(
   {
     Search: SearchStackNavigator,
     Appointments: AppointmentsStackNavigator,
-    Messages,
+    Messages: MessagesStackNavigator,
     Settings,
   },
   {

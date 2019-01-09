@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
 export default class Messages extends Component {
+  static navigationOptions = {
+    title: 'Mensajes',
+    headerStyle: {
+      backgroundColor: '#26B99A',
+    },
+    headerTitleStyle: {
+      color: '#fff',
+    },
+  };
+
   state = {};
 
   render() {
     return (
-      <View>
-        <Text>Messages</Text>
-      </View>
+      <View />
     );
   }
 }
