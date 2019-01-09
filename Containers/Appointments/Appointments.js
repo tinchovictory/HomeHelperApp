@@ -9,6 +9,10 @@ const styles = StyleSheet.create({
   switchControl: {
     padding: 20,
   },
+  listContainer: {
+    height: '100%',
+    width: '100%',
+  },
 });
 
 export default class Appointments extends Component {
@@ -28,8 +32,8 @@ export default class Appointments extends Component {
       {
         id: 1,
         name: 'Martin Victory',
-        status: 'Pennding',
-        img: '',
+        status: 'Pending',
+        img: 'http://pawserver.it.itba.edu.ar/paw-2018a-4/api/users/15/image',
         serviceType: 'Carpintero',
         date: '23/05/2019',
       },
@@ -37,7 +41,7 @@ export default class Appointments extends Component {
         id: 2,
         name: 'Martin Victory 2',
         status: 'Canceled',
-        img: '',
+        img: 'http://pawserver.it.itba.edu.ar/paw-2018a-4/api/users/15/image',
         serviceType: 'Pintor',
         date: '23/05/2019',
       },
@@ -45,7 +49,7 @@ export default class Appointments extends Component {
         id: 3,
         name: 'Martin Victory 3',
         status: 'Confirmed',
-        img: '',
+        img: 'http://pawserver.it.itba.edu.ar/paw-2018a-4/api/users/15/image',
         serviceType: 'Electricista',
         date: '23/05/2019',
       },
@@ -53,7 +57,7 @@ export default class Appointments extends Component {
         id: 4,
         name: 'Martin Victory 4',
         status: 'Done',
-        img: '',
+        img: 'http://pawserver.it.itba.edu.ar/paw-2018a-4/api/users/15/image',
         serviceType: 'Plomero',
         date: '23/05/2019',
       },
@@ -69,6 +73,13 @@ export default class Appointments extends Component {
   render() {
     const { selectedTab, data } = this.state;
 
+    let filteredItems = data;
+    if (selectedTab === 0) { // show pending and confifmed
+      filteredItems = data.filter(({ status }) => status === 'Pending' || status === 'Confirmed');
+    } else if (selectedTab === 1) { // show done and canceled
+      filteredItems = data.filter(({ status }) => status === 'Canceled' || status === 'Done');
+    }
+
     return (
       <View>
         <View style={styles.switchControl}>
@@ -79,11 +90,12 @@ export default class Appointments extends Component {
             selectedIndex={selectedTab}
           />
         </View>
-        <View>
+        <View style={styles.listContainer}>
           <FlatList
-            data={data}
+            data={filteredItems}
             keyExtractor={item => item.id.toString()}
             renderItem={this.renderAppointmentItem}
+            style={styles.list}
           />
         </View>
       </View>
