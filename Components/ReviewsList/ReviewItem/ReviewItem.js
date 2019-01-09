@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 import ScoreStars from '../../ScoreStars/ScoreStars';
 
+import ProfilePicture from '../../../assets/profilePicture.jpg';
+
 const styles = StyleSheet.create({
   reviewHeader: {
     marginBottom: 20,
@@ -56,7 +58,7 @@ const ReviewItem = ({ review }) => (
     <View style={styles.reviewHeader}>
       <Image
         style={styles.profilePicture}
-        source={{ uri: 'http://pawserver.it.itba.edu.ar/paw-2018a-4/api/users/15/image' }}
+        source={ProfilePicture}
       />
       <View style={styles.rightHeaderContainer}>
         <View style={styles.nameContainer}>

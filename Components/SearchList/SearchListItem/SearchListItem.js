@@ -6,6 +6,8 @@ import PropTypes from 'prop-types';
 
 import ScoreStars from '../../ScoreStars/ScoreStars';
 
+import ProfilePicture from '../../../assets/profilePicture.jpg';
+
 const styles = StyleSheet.create({
   itemContainer: {
     padding: 10,
@@ -49,7 +51,7 @@ const SearchListItem = ({
   >
     <Image
       style={styles.profilePicture}
-      source={{ uri: 'http://pawserver.it.itba.edu.ar/paw-2018a-4/api/users/15/image' }}
+      source={ProfilePicture}
     />
     <View style={styles.rowDescription}>
       <View style={styles.rowName}>

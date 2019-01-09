@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import {
-  View, Text, Image, StyleSheet, TouchableOpacity, 
+  View, Text, Image, StyleSheet, TouchableOpacity,
 } from 'react-native';
 
 import Description from '../Description/Description';
 import ScoreStars from '../ScoreStars/ScoreStars';
+
+import ProfilePicture from '../../assets/profilePicture.jpg';
 
 const styles = StyleSheet.create({
   reviewHeader: {
@@ -64,7 +66,7 @@ export default class ReviewSection extends Component {
         <View style={styles.reviewHeader}>
           <Image
             style={styles.profilePicture}
-            source={{ uri: 'http://pawserver.it.itba.edu.ar/paw-2018a-4/api/users/15/image' }}
+            source={ProfilePicture}
           />
           <View style={styles.rightHeaderContainer}>
             <View style={styles.nameContainer}>

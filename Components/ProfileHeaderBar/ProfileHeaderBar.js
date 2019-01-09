@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
 
 import ScoreStars from '../ScoreStars/ScoreStars';
 import bgImg from '../../assets/ProfileBg.png';
+import ProfilePicture from '../../assets/profilePicture.jpg';
 
 const HEADER_MAX_HEIGHT = 300;
 const HEADER_MIN_HEIGHT = 88;
@@ -132,7 +133,7 @@ const ProfileHeaderBar = ({
         <View style={styles.headerInfoContainer}>
           <Image
             style={styles.profileImage}
-            source={{ uri: img }}
+            source={ProfilePicture}
           />
           <Text style={styles.profileName}>{name}</Text>
           <Text style={styles.serviceTypes}>{serviceTypes.join(', ')}</Text>

@@ -4,6 +4,8 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 
+import ProfilePicture from '../../assets/profilePicture.jpg';
+
 const styles = StyleSheet.create({
   itemContainer: {
     padding: 20,
@@ -65,7 +67,7 @@ const AppointmentListItem = ({ item }) => {
     <View style={styles.itemContainer}>
       <Image
         style={styles.profileImage}
-        source={{ uri: item.img }}
+        source={ProfilePicture}
       />
       <View style={styles.rightContainer}>
         <View>
